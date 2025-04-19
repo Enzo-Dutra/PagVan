@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+header{
+    background-color: #a21841;
+    display: flex;
+    align-items: center; 
+    padding: 4%;
+    font-family:sans-serif;
+}
+header h1{
+    font-size: 60px;
+}
+header h3{
+    padding-left: 25%;
+    padding-right: 20%;
+    font-size: 25px;
+}
+.titulologin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+.formlogin input{
+    width: 400px;
+    height: 40px;
+    border-color: black;
+    border-radius: 30px;
+    font-size: 20px;
+    padding-left: 40px ;
+}
+.formlogin{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.login{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-top: 7%;
+}
+.login p{
+    font-size: 25px;
+}
+.formlogin button{
+    margin-left: 30%;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    background-color: #a21841;
+    font-size: 25px ;
+}
+.formlogin p{
+    padding-left: 30px;
+}
+.titulocadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    font-size: 60px;
+}
+.cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+    font-size: 25px;
+}
+.cadastro input{
+    width: 400px;
+    height: 40px;
+    border-color: black;
+    border-radius: 30px;
+    font-size: 20px;
+    padding-left: 40px;
+}
+.cadastro button{
+    margin-left: 30%;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    background-color: #a21841;
+    font-size: 25px ;
+}
+.p1{
+    padding-right: 10%;
+}
+.p3{
+    display: grid;
+    position: fixed;
+    margin-top: 450px;
+    padding-right: 10%;
+}
+.email_input{
+    background-image: url(Icons/email_icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 20px;
+}
+.nome_input{
+    background-image: url(Icons/user_icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 23px;   
+}
+.telefone_input{
+    background-image: url(Icons/telefone_icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 20px;
+}
+.senha_input{
+    background-image: url(Icons/senha-icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 23px;
+}
+.cpf_input{
+    background-image: url(Icons/cpf_icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 23px;
+}
