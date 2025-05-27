@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Alunos Cadastrados</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <h2 class="form-title">Alunos Cadastrados</h2>
+
+        <!-- Filtros ou opções de ordenação podem ser adicionados aqui -->
+
+        <div class="alunos-list-container">
+            <table id="alunos-table">
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Vencimento</th>
+                        <th>Situação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="alunos-table-body">
+                    <!-- Linhas da tabela serão preenchidas dinamicamente via JS -->
+                    <!-- Exemplo de linha (será gerado pelo JS): -->
+                    <!-- 
+                    <tr>
+                        <td>João Amorim dos Santos</td>
+                        <td>Dia 05</td>
+                        <td><span class="status status-atrasado">Atrasada</span></td>
+                        <td>
+                            <button class="btn-action btn-details">Detalhes</button>
+                            <button class="btn-action btn-pay">Dar Baixa</button>
+                        </td>
+                    </tr> 
+                    -->
+                </tbody>
+            </table>
+            <p id="loading-message">Carregando alunos...</p>
+            <p id="no-alunos-message" style="display: none;">Nenhum aluno cadastrado.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <script src="lista_alunos.js"></script> <!-- Script para carregar e gerenciar a lista -->
+
+</body>
+</html>

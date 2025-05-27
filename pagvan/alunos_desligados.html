@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Alunos Desligados</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <div class="alunos-list-container">
+            <h2 class="form-title">Alunos Desligados</h2>
+            
+            <div id="loading-message" style="display: none; text-align: center; margin-top: 20px;">Carregando alunos desligados...</div>
+            <div id="no-alunos-message" style="display: none; text-align: center; margin-top: 20px;">Nenhum aluno desligado encontrado.</div>
+            <div id="error-message" style="display: none; text-align: center; margin-top: 20px; color: red;"></div>
+
+            <table id="alunos-desligados-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas da tabela serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Informações de rodapé, se necessário -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <script src="alunos_desligados.js"></script> 
+</body>
+</html>

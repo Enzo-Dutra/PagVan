@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Detalhes do Aluno</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <div class="details-container">
+                        <a href="lista_alunos.html" class="btn btn-secondary btn-back" style="float: left; margin-bottom: 1rem;">&larr; Voltar para Lista</a>
+            <h2 class="form-title" style="clear: both;">Detalhes do Aluno</h2>
+            
+            <div id="aluno-details-content">
+                <!-- Conteúdo será carregado via JS -->
+                <p id="loading-details">Carregando detalhes...</p>
+                
+                <!-- Estrutura exemplo (será gerada/preenchida pelo JS) -->
+                <!-- 
+                <div class="detail-item">
+                    <label>Nome da Criança:</label>
+                    <span class="detail-value" id="detail-nome-crianca">[Nome]</span>
+                    <button class="btn-action btn-edit" data-field="nome_crianca">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Nome do Responsável:</label>
+                    <span class="detail-value" id="detail-nome-responsavel">[Responsável]</span>
+                    <button class="btn-action btn-edit" data-field="nome_responsavel">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Telefone do Responsável:</label>
+                    <span class="detail-value" id="detail-telefone-responsavel">[Telefone]</span>
+                    <button class="btn-action btn-edit" data-field="telefone_responsavel">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Horário:</label>
+                    <span class="detail-value" id="detail-horario">[Horário]</span>
+                    <button class="btn-action btn-edit" data-field="horario">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Escola:</label>
+                    <span class="detail-value" id="detail-escola">[Escola]</span>
+                    <button class="btn-action btn-edit" data-field="escola">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Valor da Mensalidade:</label>
+                    <span class="detail-value" id="detail-valor-mensalidade">[Valor]</span>
+                    <button class="btn-action btn-edit" data-field="valor_mensalidade_centavos">Alterar</button>
+                </div>
+                <div class="detail-item">
+                    <label>Dia do Vencimento:</label>
+                    <span class="detail-value" id="detail-dia-vencimento">[Dia]</span>
+                    <button class="btn-action btn-edit" data-field="dia_vencimento">Alterar</button>
+                </div>
+                -->
+            </div>
+
+            <div class="form-actions" style="margin-top: 2rem; text-align: center;">
+                 <button id="confirmar-alteracoes-btn" class="btn btn-primary" style="display: none;">Confirmar Alterações</button>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <script src="detalhes_aluno.js"></script> <!-- Script para carregar e gerenciar detalhes -->
+
+</body>
+</html>

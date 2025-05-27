@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Cadastrar Criança</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <div class="cadastro-container"> <!-- Reutilizando container de cadastro -->
+            <h2 class="form-title">Cadastro de Criança</h2>
+
+            <form id="form-cadastro-crianca" action="" method="post">
+                <!-- Feedback do formulário (para mensagens de erro/sucesso da API) -->
+                <div class="form-feedback" style="display: none;"></div>
+
+                <div class="form-group">
+                    <label for="nome-crianca">Nome da Criança:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nome-crianca" name="nome_crianca" placeholder="Nome completo da criança" required>
+                        <!-- Ícone pode ser adicionado via CSS se necessário -->
+                    </div>
+                    <span class="error-message" id="nome-crianca-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome-responsavel">Nome do Responsável:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nome-responsavel" name="nome_responsavel" placeholder="Nome do pai, mãe ou responsável" required>
+                    </div>
+                    <span class="error-message" id="nome-responsavel-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone-responsavel">Telefone do Responsável:</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="telefone-responsavel" name="telefone_responsavel" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <span class="error-message" id="telefone-responsavel-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="horario">Horário:</label>
+                    <div class="input-wrapper">
+                        <select id="horario" name="horario" required>
+                            <option value="" disabled selected>Selecione o período</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Integral">Integral</option>
+                        </select>
+                    </div>
+                    <span class="error-message" id="horario-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="escola">Escola:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="escola" name="escola" placeholder="Nome da escola" required>
+                    </div>
+                    <span class="error-message" id="escola-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor-mensalidade">Valor da Mensalidade (R$):</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="valor-mensalidade" name="valor_mensalidade" placeholder="Ex: 200.00" required inputmode="decimal">
+                        <!-- Usar type="text" para facilitar máscara de moeda depois -->
+                    </div>
+                    <span class="error-message" id="valor-mensalidade-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-vencimento">Dia do Vencimento:</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="data-vencimento" name="data_vencimento" placeholder="Dia do mês (1-31)" min="1" max="31" required>
+                    </div>
+                    <span class="error-message" id="data-vencimento-error"></span>
+                </div>
+
+                <button type="submit">Cadastrar Criança</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <!-- Adicionar script de validação/máscara específico para este form -->
+    <script src="cadastro_crianca_validation.js"></script>
+
+</body>
+</html>

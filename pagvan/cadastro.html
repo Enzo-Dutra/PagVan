@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Cadastro</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <h3>O sistema oficial dos Tios de Van Escolar</h3>
+    </header>
+    <main class="container">
+        <div class="cadastro-container">
+            <h1 class="form-title">Cadastro</h1>
+            <form action="" method="post" id="form-cadastro" novalidate>
+                <div class="form-group">
+                    <label for="nome-cadastro">Nome Completo:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nome-cadastro" class="nome_input" placeholder="Seu nome completo" name="nome" required aria-describedby="nome-cadastro-error">
+                        <span class="error-message" id="nome-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email-cadastro">Email:</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email-cadastro" class="email_input" placeholder="seu@email.com" name="email" required aria-describedby="email-cadastro-error">
+                        <span class="error-message" id="email-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="telefone-cadastro">Telefone:</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="telefone-cadastro" class="telefone_input" placeholder="(XX) XXXXX-XXXX" name="telefone" required pattern="\(\d{2}\)\s\d{5}-\d{4}" aria-describedby="telefone-cadastro-error">
+                        <span class="error-message" id="telefone-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpf-cadastro">CPF:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="cpf-cadastro" class="cpf_input" placeholder="XXX.XXX.XXX-XX" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" aria-describedby="cpf-cadastro-error">
+                        <span class="error-message" id="cpf-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="senha-cadastro">Senha:</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="senha-cadastro" class="senha_input" placeholder="Crie uma senha (mín. 6 caracteres)" name="password" required minlength="6" aria-describedby="senha-cadastro-error">
+                        <span class="error-message" id="senha-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirma-senha-cadastro">Confirme sua Senha:</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirma-senha-cadastro" class="senha_input" placeholder="Confirme a senha" name="confirm_password" required aria-describedby="confirma-senha-cadastro-error">
+                        <span class="error-message" id="confirma-senha-cadastro-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <button type="submit">Cadastrar</button>
+                <p class="login-link">Já possui uma conta? <a href="login.html">Faça login!</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="validation.js"></script>
+</body>
+</html>

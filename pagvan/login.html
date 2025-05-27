@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Login</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <h3>O sistema oficial dos Tios de Van Escolar</h3>
+    </header>
+    <main class="container">
+        <div class="login-container">
+            <form action="" method="post" id="form-login" novalidate>
+                <h1 class="form-title">Login</h1>
+                <div class="form-group">
+                    <label for="email-login">Email:</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email-login" class="email_input" placeholder="seu@email.com" name="email" required aria-describedby="email-login-error">
+                        <span class="error-message" id="email-login-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="senha-login">Senha:</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="senha-login" class="senha_input" placeholder="Sua senha" name="password" required aria-describedby="senha-login-error">
+                        <span class="error-message" id="senha-login-error" aria-live="polite"></span> <!-- Added aria-live -->
+                    </div>
+                </div>
+                <button type="submit">Entrar</button>
+                <p class="forgot-password">Ainda não tem uma conta? <a href="cadastro.html">Clique aqui!</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="validation.js"></script>
+</body>
+</html>

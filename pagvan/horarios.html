@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Horários</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <div class="horarios-container">
+            <h2 class="form-title">Horários dos Alunos</h2>
+
+            <div class="filtros-container">
+                <div class="form-group">
+                    <label for="filtro-escola">Filtrar por Escola:</label>
+                    <select id="filtro-escola" name="filtro-escola">
+                        <option value="">Todas as Escolas</option>
+                        <!-- Opções de escola serão carregadas via JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-horario">Filtrar por Horário:</label>
+                    <select id="filtro-horario" name="filtro-horario">
+                        <option value="">Todos os Horários</option>
+                        <option value="Manhã">Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Integral">Integral</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="horarios-content">
+                <!-- Conteúdo (alunos agrupados) será carregado via JS -->
+                <p id="loading-horarios">Carregando horários...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <script src="horarios.js"></script> <!-- Script para carregar e filtrar horários -->
+
+</body>
+</html>
+

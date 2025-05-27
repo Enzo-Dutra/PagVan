@@ -1,0 +1,1177 @@
+/* Reset básico e configurações globais */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #a21841;
+    color: white;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    align-items: center;
+    justify-content: space-between; /* Espaça melhor os itens */
+    padding: 1rem 5%; /* Usa rem e % para padding */
+    font-family: sans-serif;
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Tamanho de fonte responsivo */
+    margin-right: 1rem; /* Espaço entre título e subtítulo */
+}
+
+header h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem); /* Tamanho de fonte responsivo */
+    text-align: right;
+    flex-grow: 1; /* Permite que o subtítulo ocupe espaço */
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto; /* Centraliza e adiciona margem */
+    padding: 0 1rem; /* Padding lateral para telas menores */
+}
+
+/* Estilos comuns para containers de formulário */
+.login-container,
+.cadastro-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limita a largura máxima do formulário */
+    margin: 2rem auto; /* Centraliza o container do formulário */
+}
+
+/* Título do formulário */
+.form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Tamanho responsivo */
+    color: #a21841;
+}
+
+/* Grupos de formulário (label + input + erro) */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Wrapper para input e ícone (se houver) */
+.input-wrapper {
+    position: relative;
+}
+
+/* Estilos gerais para inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%; /* Ocupa toda a largura do container */
+    height: 45px;
+    padding: 0.8rem;
+    padding-left: 40px; /* Espaço para o ícone */
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a21841;
+    box-shadow: 0 0 5px rgba(162, 24, 65, 0.3);
+}
+
+/* Estilos para inputs com erro */
+.input-error {
+    border-color: red;
+}
+
+/* Mensagens de erro */
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.3rem;
+    min-height: 1em; /* Reserva espaço para a mensagem */
+}
+
+/* Ícones dentro dos inputs (usando background) */
+.email_input {
+    background-image: url(Icons/email_icon.png); /* Idealmente, usar SVGs ou fontes de ícones */
+}
+.nome_input {
+    background-image: url(Icons/user_icon.png);
+}
+.telefone_input {
+    background-image: url(Icons/telefone_icon.png);
+}
+.senha_input {
+    background-image: url(Icons/senha-icon.png);
+}
+.cpf_input {
+    background-image: url(Icons/cpf_icon.png);
+}
+
+.email_input,
+.nome_input,
+.telefone_input,
+.senha_input,
+.cpf_input {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+}
+
+/* Botão de submit */
+button[type="submit"] {
+    display: block; /* Faz o botão ocupar a linha inteira */
+    width: 100%; /* Largura total */
+    padding: 0.8rem;
+    border: none;
+    border-radius: 30px;
+    background-color: #a21841;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #811334; /* Tom mais escuro no hover */
+}
+
+/* Links (Esqueci senha, Já tem conta) */
+.forgot-password,
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.forgot-password a,
+.login-link a {
+    color: #a21841;
+    font-weight: bold;
+}
+
+.forgot-password a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores (ex: smartphones) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha título e subtítulo */
+        text-align: center;
+        padding: 1rem 5%;
+    }
+
+    header h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    header h3 {
+        text-align: center;
+        padding: 0;
+    }
+
+    .login-container,
+    .cadastro-container {
+        padding: 1.5rem;
+        margin: 1rem; /* Reduz margem em telas menores */
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        height: 40px;
+        font-size: 0.95rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 0.7rem;
+    }
+}
+
+/* Ajustes finos para telas muito pequenas */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header h3 {
+        font-size: 1rem;
+    }
+    .login-container,
+    .cadastro-container {
+        padding: 1rem;
+    }
+    .form-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Removendo estilos antigos não mais necessários */
+/* .titulologin, .formlogin, .login, .titulocadastro, .cadastro, .p1, .p2, .p3 foram substituídos por estruturas mais semânticas e flexíveis */
+
+
+
+/* --- Estilos para a Tela de Boas-Vindas --- */
+
+.welcome-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Um pouco mais largo que o formulário */
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.welcome-container h2 {
+    color: #a21841;
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.welcome-container p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.welcome-actions {
+    display: flex;
+    flex-direction: column; /* Empilha botões em telas menores por padrão */
+    gap: 1rem; /* Espaço entre os botões */
+    align-items: center;
+}
+
+/* Estilos base para botões de ação */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 250px; /* Largura mínima para consistência */
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #a21841;
+    color: white;
+    border: 2px solid #a21841;
+}
+
+.btn-primary:hover {
+    background-color: #811334;
+    border-color: #811334;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #a21841;
+    border: 2px solid #a21841;
+}
+
+.btn-secondary:hover {
+    background-color: #f4f4f4;
+}
+
+/* Ajustes para telas maiores (coloca botões lado a lado) */
+@media (min-width: 500px) {
+    .welcome-actions {
+        flex-direction: row; /* Botões lado a lado */
+        justify-content: center;
+    }
+    .btn {
+        min-width: auto; /* Remove largura mínima */
+    }
+}
+
+/* Ajustes de responsividade herdados de .login-container */
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-container {
+        padding: 1rem;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+        min-width: 200px;
+    }
+}
+
+
+
+/* --- Estilos para a Sidebar Retrátil --- */
+
+.sidebar-toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem; /* Tamanho do ícone hamburger */
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1; /* Evita altura extra */
+    margin-left: auto; /* Empurra para a direita */
+}
+
+.sidebar {
+    height: 100%;
+    width: 280px; /* Largura da sidebar */
+    position: fixed;
+    top: 0;
+    right: -280px; /* Começa fora da tela */
+    background-color: #333; /* Cor de fundo escura */
+    overflow-x: hidden;
+    transition: right 0.3s ease; /* Animação de deslize */
+    padding-top: 60px; /* Espaço para o botão de fechar */
+    z-index: 1001; /* Acima do overlay */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar.open {
+    right: 0; /* Move para dentro da tela */
+}
+
+.sidebar-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #818181;
+    cursor: pointer;
+}
+
+.sidebar-close-btn:hover {
+    color: #f1f1f1;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #818181;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar li a:hover {
+    color: #f1f1f1;
+    background-color: #555;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    z-index: 1000; /* Abaixo da sidebar, acima do conteúdo */
+    display: none; /* Oculto por padrão */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Ajuste no header para acomodar o botão */
+header {
+    /* Mantém os estilos existentes, mas garante que o botão fique visível */
+    position: relative; /* Necessário para z-index se houver sobreposição */
+    z-index: 1; /* Garante que o header fique acima do conteúdo normal */
+}
+
+/* Ajuste no conteúdo principal para não ser coberto pela sidebar fixa (opcional) */
+/* body.sidebar-open main { */
+/*   margin-right: 280px; /* Empurra o conteúdo principal */
+/*   transition: margin-right 0.3s ease; */
+/* } */
+/* Comentado pois o overlay é uma abordagem mais comum e simples */
+
+
+
+/* --- Estilos Adicionais para Formulário Cadastro Criança --- */
+
+/* Estilo para o select (horário) */
+select {
+    width: 100%;
+    height: 45px;
+    padding: 0.8rem;
+    padding-left: 15px; /* Ajuste se não houver ícone */
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: white; /* Fundo branco */
+    color: #555; /* Cor do texto padrão */
+    appearance: none; /* Remove aparência padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27292.4%27%20height%3D%27292.4%27%3E%3Cpath%20fill%3D%27%23a21841%27%20d%3D%27M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%27%2F%3E%3C%2Fsvg%3E"); /* Ícone de seta (cor #a21841) */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #a21841;
+    box-shadow: 0 0 5px rgba(162, 24, 65, 0.3);
+}
+
+/* Estilo para input[type=number] (dia vencimento) */
+input[type="number"] {
+    width: 100%;
+    height: 45px;
+    padding: 0.8rem;
+    padding-left: 15px; /* Ajuste se não houver ícone */
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    -moz-appearance: textfield; /* Remove setas no Firefox */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Remove setas no Chrome/Safari/Edge */
+    margin: 0;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #a21841;
+    box-shadow: 0 0 5px rgba(162, 24, 65, 0.3);
+}
+
+/* Placeholder para select */
+select:required:invalid {
+  color: #6c757d; /* Cor cinza para placeholder */
+}
+option[value=""][disabled] {
+  display: none; /* Esconde a opção placeholder da lista */
+}
+option {
+  color: #333; /* Cor normal das opções */
+}
+
+/* Ajuste no padding-left dos inputs que não terão ícone */
+#nome-crianca,
+#nome-responsavel,
+#escola,
+#valor-mensalidade,
+#data-vencimento {
+    padding-left: 15px;
+}
+
+/* Ajuste responsivo para select */
+@media (max-width: 768px) {
+    select,
+    input[type="number"] {
+        height: 40px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/* --- Estilos para a Tela de Lista de Alunos --- */
+
+.alunos-list-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+}
+
+#alunos-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre células */
+    margin-top: 1.5rem;
+}
+
+#alunos-table th,
+#alunos-table td {
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#alunos-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+#alunos-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor alternada para linhas */
+}
+
+#alunos-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para a coluna de Situação */
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px; /* Bordas arredondadas */
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 80px; /* Largura mínima */
+}
+
+.status-em-dia {
+    background-color: #28a745; /* Verde */
+}
+
+.status-atrasado {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.status-prestes-a-vencer {
+    background-color: #ffc107; /* Amarelo */
+    color: #333; /* Texto escuro para melhor contraste */
+}
+
+/* Estilos para os botões de Ação */
+.btn-action {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.btn-action:hover {
+    opacity: 0.8;
+}
+
+.btn-details {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+
+.btn-pay {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+/* Mensagens de carregamento/sem alunos */
+#loading-message,
+#no-alunos-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Ajustes responsivos para a tabela */
+@media (max-width: 768px) {
+    .alunos-list-container {
+        padding: 1rem;
+    }
+    #alunos-table th,
+    #alunos-table td {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    .btn-action {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem; /* Espaço extra em telas pequenas */
+        display: inline-block; /* Garante que fiquem na linha */
+    }
+    /* Opcional: Esconder colunas menos importantes em telas pequenas */
+    /* #alunos-table th:nth-child(2), 
+       #alunos-table td:nth-child(2) { display: none; } */
+}
+
+@media (max-width: 480px) {
+    #alunos-table th,
+    #alunos-table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    .btn-action {
+        display: block; /* Empilha botões */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    .btn-action:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/* --- Estilos para a Tela de Detalhes do Aluno --- */
+
+.details-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* Um pouco mais largo */
+    margin: 2rem auto;
+}
+
+#aluno-details-content {
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item label {
+    flex-basis: 200px; /* Largura fixa para o label */
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem; /* Espaço abaixo em telas pequenas */
+}
+
+.detail-value {
+    flex-grow: 1;
+    margin-right: 1rem;
+    color: #333;
+    min-width: 150px; /* Largura mínima para o valor */
+    margin-bottom: 0.5rem; /* Espaço abaixo em telas pequenas */
+}
+
+/* Estilo para inputs/selects quando em modo de edição */
+.detail-item input[type="text"],
+.detail-item input[type="tel"],
+.detail-item input[type="number"],
+.detail-item select {
+    flex-grow: 1;
+    margin-right: 1rem;
+    /* Reutiliza estilos de input/select do formulário, mas ajusta altura/padding se necessário */
+    height: 40px;
+    padding: 0.6rem 1rem;
+    border-radius: 5px; /* Bordas menos arredondadas para edição */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-edit {
+    background-color: #ffc107; /* Amarelo */
+    color: #333;
+    margin-left: auto; /* Empurra para a direita */
+}
+
+/* Ajustes responsivos para a tela de detalhes */
+@media (max-width: 768px) {
+    .details-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    .detail-item label {
+        flex-basis: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .detail-item {
+        flex-direction: column; /* Empilha label, valor e botão */
+        align-items: flex-start;
+    }
+    .detail-item label {
+        flex-basis: auto; /* Largura automática */
+        width: 100%;
+    }
+    .detail-value,
+    .detail-item input[type="text"],
+    .detail-item input[type="tel"],
+    .detail-item input[type="number"],
+    .detail-item select {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    .btn-edit {
+        margin-left: 0; /* Alinha à esquerda */
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+
+/* --- Estilos Aprimorados para Tela de Detalhes do Aluno --- */
+
+.details-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* Um pouco mais largo */
+    margin: 2rem auto;
+}
+
+/* Estilo para o botão Voltar */
+.btn-back {
+    /* Usa os estilos de .btn e .btn-secondary */
+    float: left;
+    margin-bottom: 1.5rem; /* Mais espaço abaixo */
+    margin-right: 1rem; /* Espaço à direita se algo flutuar */
+    clear: none; /* Permite que o título flutue ao lado se houver espaço */
+}
+
+/* Ajuste no título para limpar o float do botão */
+.details-container .form-title {
+    clear: both; /* Garante que o título comece abaixo do botão */
+    padding-top: 0.5rem; /* Adiciona espaço acima se o botão estiver acima */
+}
+
+#aluno-details-content {
+    margin-top: 1.5rem;
+    clear: both; /* Garante que o conteúdo comece abaixo do título e botão */
+}
+
+.detail-item {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    align-items: center; /* Alinha verticalmente */
+    padding: 1rem 0; /* Aumenta o espaçamento vertical */
+    border-bottom: 1px solid #eee;
+    gap: 0.5rem 1rem; /* Espaço entre label, valor e botão */
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item label {
+    flex-basis: 180px; /* Largura base para o label */
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #555;
+    padding-right: 1rem; /* Espaço entre label e valor */
+}
+
+.detail-value {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    color: #333;
+    min-width: 150px; /* Largura mínima para evitar espremer */
+    word-break: break-word; /* Quebra palavras longas */
+}
+
+/* Estilo para o input quando em modo de edição */
+.detail-item input[type="text"],
+.detail-item input[type="number"],
+.detail-item input[type="tel"],
+.detail-item select {
+    flex-grow: 1;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    height: auto; /* Altura automática */
+    margin-right: 1rem; /* Espaço antes do botão Salvar/Cancelar */
+    min-width: 150px;
+}
+
+/* Botão de Alterar/Salvar/Cancelar */
+.detail-item .btn-action {
+    margin-left: auto; /* Empurra o botão para a direita */
+    flex-shrink: 0; /* Não encolhe */
+    padding: 0.5rem 1rem;
+}
+
+.btn-edit {
+    background-color: #ffc107; /* Amarelo */
+    color: #333;
+}
+
+.btn-save {
+    background-color: #28a745; /* Verde */
+    color: white;
+    margin-right: 0.5rem; /* Espaço entre Salvar e Cancelar */
+}
+
+.btn-cancel {
+    background-color: #6c757d; /* Cinza */
+    color: white;
+}
+
+/* Botão principal de Confirmar Alterações (quando múltiplos campos são editados) */
+#confirmar-alteracoes-btn {
+    /* Usa estilos de .btn e .btn-primary */
+    margin-top: 2rem;
+}
+
+/* Responsividade para a tela de detalhes */
+@media (max-width: 600px) {
+    .details-container {
+        padding: 1.5rem;
+    }
+    .detail-item label {
+        flex-basis: 100%; /* Label ocupa linha inteira */
+        margin-bottom: 0.3rem;
+        padding-right: 0;
+    }
+    .detail-value,
+    .detail-item input[type="text"],
+    .detail-item input[type="number"],
+    .detail-item input[type="tel"],
+    .detail-item select {
+        flex-basis: 100%; /* Valor/Input ocupa linha inteira */
+        margin-right: 0;
+        margin-bottom: 0.5rem; /* Espaço antes do botão */
+        min-width: 100%;
+    }
+    .detail-item .btn-action {
+        margin-left: 0; /* Botão não fica mais à direita */
+        width: auto; /* Largura automática */
+        display: inline-block; /* Lado a lado se couber */
+    }
+    .btn-back {
+        float: none; /* Remove float */
+        display: block; /* Ocupa a largura */
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .details-container .form-title {
+        padding-top: 0; /* Remove padding extra */
+    }
+}
+
+
+
+
+/* --- Estilos para a Tela de Alunos Desligados --- */
+.status-desligado {
+    background-color: #6c757d; /* Cinza para desligado */
+    color: white;
+}
+
+.btn-reativar {
+    background-color: #17a2b8; /* Azul claro/ciano para reativar */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reativar:hover {
+    background-color: #138496; /* Tom mais escuro no hover */
+}
+
+.btn-details-link {
+    background-color: #6c757d; /* Cinza para detalhes */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Para padding funcionar corretamente */
+    transition: background-color 0.3s ease;
+}
+
+.btn-details-link:hover {
+    background-color: #5a6268;
+}
+
+#alunos-desligados-table th:nth-child(1), /* Aluno */
+#alunos-desligados-table td:nth-child(1) {
+    width: 50%;
+}
+
+#alunos-desligados-table th:nth-child(2), /* Situação */
+#alunos-desligados-table td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+}
+
+#alunos-desligados-table th:nth-child(3), /* Ações */
+#alunos-desligados-table td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+}
+
+
+
+
+/* Estilo para o botão Desativar na lista de alunos ativos */
+.btn-deactivate {
+    background-color: #dc3545; /* Vermelho, similar ao status "Atrasado" para indicar uma ação de "remoção" */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.4rem 0.8rem; /* Mesmo padding de outros btn-action */
+    border-radius: 5px; /* Mesmo border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px; /* Espaçamento similar a outros botões na célula de ações */
+}
+
+.btn-deactivate:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+
+
+
+/* --- Estilos para a Tela de Alunos Desligados (ATUALIZADO para 2 colunas) --- */
+.status-desligado {
+    background-color: #6c757d; /* Cinza para desligado */
+    color: white;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.btn-reativar {
+    background-color: #17a2b8; /* Azul claro/ciano para reativar */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reativar:hover {
+    background-color: #138496; /* Tom mais escuro no hover */
+}
+
+/* Ajuste para a tabela de alunos desligados com 2 colunas */
+#alunos-desligados-table th:nth-child(1), /* Aluno */
+#alunos-desligados-table td:nth-child(1) {
+    width: 70%;
+    text-align: left;
+}
+
+#alunos-desligados-table th:nth-child(2), /* Ação */
+#alunos-desligados-table td:nth-child(2) {
+    width: 30%;
+    text-align: center;
+}
+#alunos-desligados-table {
+    width: 80%; /* Define uma largura para a tabela, ajuste conforme necessário */
+    max-width: 800px; /* Opcional: define uma largura máxima para telas grandes */
+    margin-left: auto; /* Centraliza a tabela horizontalmente */
+    margin-right: auto; /* Centraliza a tabela horizontalmente */
+    /* Mantém os estilos de borda e espaçamento já definidos globalmente ou anteriormente */
+}
+#alunos-desligados-table {
+    width: 80%; /* Define uma largura para a tabela, ajuste conforme necessário */
+    max-width: 800px; /* Opcional: define uma largura máxima para telas grandes */
+    margin-left: auto; /* Centraliza a tabela horizontalmente */
+    margin-right: auto; /* Centraliza a tabela horizontalmente */
+    /* Mantém os estilos de borda e espaçamento já definidos globalmente ou anteriormente */
+}
+
+
+
+
+/* Estilos fornecidos pelo usuário para .alunos-list-container e tabelas (aplicado a alunos-desligados) */
+.alunos-list-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto; /* Centraliza o container */
+    overflow-x: auto;
+}
+
+#alunos-desligados-table {
+    width: 100%; /* Tabela ocupa 100% do .alunos-list-container */
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+#alunos-desligados-table th,
+#alunos-desligados-table td {
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    text-align: left; /* Default text-align para todas as células */
+    vertical-align: middle;
+}
+
+#alunos-desligados-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+#alunos-desligados-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#alunos-desligados-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para a classe .status (incluído conforme fornecido, embora não usado na tabela de 2 colunas de alunos desligados) */
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 80px;
+}
+
+/* Ajustes específicos para as colunas da #alunos-desligados-table (mantendo 70/30 e alinhamentos específicos) */
+#alunos-desligados-table th:nth-child(1),
+#alunos-desligados-table td:nth-child(1) { /* Coluna Aluno */
+    width: 70%;
+    text-align: left; /* Mantém/reafirma alinhamento à esquerda */
+}
+
+#alunos-desligados-table th:nth-child(2),
+#alunos-desligados-table td:nth-child(2) { /* Coluna Ação */
+    width: 30%;
+    text-align: center; /* Centraliza o conteúdo da coluna de Ação */
+}
+
+#alunos-desligados-table {
+    width: 80%; /* Define uma largura para a tabela, ajuste conforme necessário */
+    max-width: 800px; /* Opcional: define uma largura máxima para telas grandes */
+    margin-left: auto; /* Centraliza a tabela horizontalmente */
+    margin-right: auto; /* Centraliza a tabela horizontalmente */
+    /* Mantém os estilos de borda e espaçamento já definidos globalmente ou anteriormente */
+}
+
+
+
+
+/* Estilos fornecidos pelo usuário para .alunos-list-container e tabelas (aplicado a alunos-desligados) */
+.alunos-list-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto; /* Centraliza o container */
+    overflow-x: auto;
+}
+
+#alunos-desligados-table {
+    width: 100%; /* Tabela ocupa 100% do .alunos-list-container */
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+#alunos-desligados-table th,
+#alunos-desligados-table td {
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    text-align: left; /* Default text-align para todas as células */
+    vertical-align: middle;
+}
+
+#alunos-desligados-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+#alunos-desligados-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#alunos-desligados-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para a classe .status (incluído conforme fornecido, embora não usado na tabela de 2 colunas de alunos desligados) */
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 80px;
+}
+
+/* Ajustes específicos para as colunas da #alunos-desligados-table (mantendo 70/30 e alinhamentos específicos) */
+#alunos-desligados-table th:nth-child(1),
+#alunos-desligados-table td:nth-child(1) { /* Coluna Aluno */
+    width: 70%;
+    text-align: left; /* Mantém/reafirma alinhamento à esquerda */
+}
+
+#alunos-desligados-table th:nth-child(2),
+#alunos-desligados-table td:nth-child(2) { /* Coluna Ação */
+    width: 30%;
+    text-align: center; /* Centraliza o conteúdo da coluna de Ação */
+}
+

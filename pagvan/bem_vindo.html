@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicionar link para Font Awesome ou outra biblioteca de ícones se usar ícones -->
+    <title>PagVan - Bem-Vindo</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <!-- Botão Hamburger para abrir a sidebar -->
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button> <!-- &#9776; é o caractere hamburger -->
+    </header>
+
+    <!-- Sidebar (inicialmente oculta) -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button> <!-- Botão para fechar -->
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Ver Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li> <!-- Link de Logout -->
+        </ul>
+    </nav>
+
+    <!-- Overlay para escurecer o fundo quando a sidebar estiver aberta -->
+    <div id="overlay" class="overlay"></div>
+
+    <main class="welcome-container">
+        <h2>Bem-Vindo ao PagVan!</h2>
+        <p>Gerencie seus alunos e pagamentos de forma eficiente.</p>
+
+        <div class="welcome-actions">
+            <a href="cadastro_crianca.html" class="btn btn-primary">Cadastrar Novo Aluno</a>
+            <a href="lista_alunos.html" class="btn btn-secondary">Ver Alunos Cadastrados</a>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Informações de rodapé, se necessário -->
+    </footer>
+
+    <!-- Scripts JS -->
+    <script src="sidebar.js"></script> <!-- Script para controlar a sidebar -->
+
+</body>
+</html>
