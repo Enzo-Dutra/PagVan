@@ -18,13 +18,12 @@ Histórico de Cadastros: Opção para "hibernar" alunos, mantendo o histórico s
 Filtros de Busca Avançados: Encontre alunos facilmente por nome, escola ou período.
 Alertas de Vencimento: Visibilidade clara da situação financeira do aluno em todas as seções do sistema, com informações sobre mensalidades pendentes.
 
-🤝 Desenvolvedores
-Gustavo Alencar
-Enzo Dutra
+🤝 Desenvolvedores <br>
+Gustavo Alencar e Enzo Dutra
 
-🌐 Tecnologias Utilizadas (A Definir)
-Frontend: (HTML e CSS)
-Backend: (JavaScript e PHP)
+🌐 Tecnologias Utilizadas <br>
+Frontend: (HTML e CSS) <br>
+Backend: (JavaScript e PHP) <br>
 Banco de Dados: (MySQL)
 
 📞 Contato
