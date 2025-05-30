@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PagVan - Pagamentos do Aluno</title>
+</head>
+<body>
+    <header>
+        <h1>PagVan</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close-btn">&times;</button>
+        <ul>
+            <li><a href="bem_vindo.html">Menu Principal</a></li>
+            <li><a href="cadastro_crianca.html">Cadastrar Aluno</a></li>
+            <li><a href="lista_alunos.html">Ver Alunos</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="alunos_desligados.html">Alunos Desligados</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main class="container">
+        <div class="pagamentos-container"> <!-- Container para centralização e estilo -->
+            <h2 class="form-title">Pagamentos - <span id="aluno-nome">Carregando...</span></h2>
+            <p>Ano: <span id="ano-referencia">2025</span></p>
+
+            <div id="feedback-pagamentos" class="form-feedback" style="display: none;"></div>
+
+            <table id="pagamentos-table">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Situação</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="pagamentos-table-body">
+                    <!-- Linhas preenchidas pelo JS -->
+                </tbody>
+            </table>
+            <p id="loading-pagamentos">Carregando status dos pagamentos...</p>
+            <p id="error-pagamentos" class="error-message" style="display: none;"></p>
+
+            <!-- Botão Voltar -->
+            <div class="voltar-button-container" style="margin-top: 2rem; text-align: center;">
+                <a href="lista_alunos.html" class="btn btn-primary">Voltar para Lista</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+    <script src="sidebar.js"></script>
+    <script src="pagamentos_alunos.js"></script>
+
+</body>
+</html>
+

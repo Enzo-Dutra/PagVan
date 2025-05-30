@@ -63,6 +63,16 @@ async function carregarAlunos() {
                 });
                 cellAcoes.appendChild(detailsButton);
 
+                // NOVO: Botão Pagamentos (Amarelo)
+                const pagamentosButton = document.createElement("button");
+                pagamentosButton.className = "btn-action btn-pagamentos"; // Nova classe para estilo amarelo
+                pagamentosButton.textContent = "Pagamentos";
+                pagamentosButton.dataset.alunoId = aluno.id;
+                pagamentosButton.addEventListener("click", () => {
+                    window.location.href = `pagamentos_alunos.html?id=${aluno.id}`;
+                });
+                cellAcoes.appendChild(pagamentosButton);
+
                 // Botão Dar Baixa
                 const payButton = document.createElement("button");
                 payButton.className = "btn-action btn-pay";
@@ -75,7 +85,7 @@ async function carregarAlunos() {
 
                 // Botão Desativar Aluno
                 const deactivateButton = document.createElement("button");
-                deactivateButton.className = "btn-action btn-deactivate"; // Nova classe para estilização
+                deactivateButton.className = "btn-action btn-deactivate";
                 deactivateButton.textContent = "Desativar";
                 deactivateButton.dataset.alunoId = aluno.id;
                 deactivateButton.addEventListener("click", () => {
